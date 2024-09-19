@@ -27,7 +27,7 @@ export default function SignIn() {
             <h1 className="w-full text-center font-bold text-[20px] md:text-[32px] md:mb-12">
               Sign in to your account
             </h1>
-            <div className="w-full flex flex-col gap-12 md:mb-4">
+            <div className="w-full flex flex-col gap-8 lg:gap-12 md:mb-4">
               <div className="border-2 py-1 border-[#807f7f] rounded-lg w-full text-center  flex justify-center items-center">
                 <input
                   type="text"
