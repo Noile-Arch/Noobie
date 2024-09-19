@@ -12,7 +12,7 @@ export default function SignIn() {
   return (
     <>
       <div className="w-full h-screen flex justify-center items-center ">
-        <div className="w-full h-full flex flex-col md:flex-row md:justify-around  justify-start pt-10 md:pt-0 lg:pt-0 items-center lg:px-40  ">
+        <div className="w-full h-full flex flex-col md:flex-row md:justify-around  justify-start pt-8 md:pt-0 lg:pt-0 items-center lg:px-40  ">
           <div className=" w-[220px] rounded-[80px] p-4 h-[200px] lg:w-[500px] lg:h-[500px] md:w-[400px] md:h-[400px] bg-[#307bdc] md:bg-transparent ">
             <img
               src="/sign-in.png"
