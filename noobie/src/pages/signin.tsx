@@ -40,8 +40,8 @@ export default function SignIn() {
               <div className="border-2 py-1 border-[#807f7f] rounded-lg w-full text-center  flex justify-center items-center">
                 <input
                   type="password"
-                  name="adm"
-                  id="adm"
+                  name="psw"
+                  id="psw"
                   placeholder="Password"
                   className="outline-none py-2 bg-transparent  text-center w-[50%]"
                 />
@@ -50,8 +50,6 @@ export default function SignIn() {
             <div className="w-[200px] rounded-2xl text-center py-3 flex justify-center items-center bg-[#2ca4f9]">
               <button
                 type="submit"
-                name="adm"
-                id="adm"
                 className="outline-none w-full h-full text-center text-white"
               >
                 Sign in
