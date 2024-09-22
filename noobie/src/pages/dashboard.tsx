@@ -10,18 +10,26 @@ import {
 
 import { IoSearchOutline } from "react-icons/io5";
 import Events from "../components/events.js";
+import Sidebar from "../components/sidebar.js";
 
 const Dashboard = () => {
   return (
-    <div className="w-full lg:h-screen h-auto justify-center  items-center bg-[whitesmoke]">
+    <div className="w-full lg:h-screen h-auto justify-center  items-center bg-[white]">
       <div className="w-full h-screen flex justify-center grid-flow-row grid-cols-2">
-        <section className="w-[10%] xl:w-[20%] h-full bg-[red] hidden lg:block"></section>
-        <section className="lg:w-[90%] w-full h-screen">
+
+        {/**SideBar Navigation */}
+        <section className="lg:w-[15%] xl:w-[20%] h-full hidden lg:block">
+         <Sidebar/>
+        </section>
+
+        
+        {/**Home view */}
+        <section className="lg:w-[92%] w-full h-screen">
           <div className="h-20 m-4 px-10 flex justify-between items-center">
             <h1 className="font-semibold text-2xl">Greetings</h1>
             <button className="flex justify-center gap-2 items-center font-semibold px-2 py-2 text-md">
               <h2 className="">Add Parent/G9</h2>
-              <RiUserAddLine className="text-xl" />
+              <RiUserAddLine className="text-xl " />
             </button>
           </div>
           <div className="  m-4 flex lg:flex-row flex-col  justify-center items-center">
