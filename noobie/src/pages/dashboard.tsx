@@ -11,24 +11,50 @@ import {
 import { IoSearchOutline } from "react-icons/io5";
 import Events from "../components/events.js";
 import Sidebar from "../components/sidebar.js";
+import { IoMenu } from "react-icons/io5";
+import { VscChromeClose } from "react-icons/vsc";
+
+import { useState } from "react";
+import MobileNav from "../utils/mobile_nav.js";
 
 const Dashboard = () => {
+  const [toogle, setToogle] = useState(false);
   return (
     <div className="w-full lg:h-screen h-auto justify-center  items-center bg-[white]">
+      {toogle && (
+        <div className="w-screen sm:w-[300px] max-h-screen fixed h-screen bg-[rgba(96,104,255,0.97)] z-30 px-4 py-4 text-[black] lg:hidden">
+          <button
+            className="text-3xl lg:hidden  w-full flex justify-end items-center"
+            onClick={() => setToogle(!toogle)}
+          >
+            <VscChromeClose className="font-bold"/>
+          </button>
+          <div className="w-full  h-full flex justify-start items-center">
+            <MobileNav/>
+          </div>
+        </div>
+      )}
       <div className="w-full h-screen flex justify-center grid-flow-row grid-cols-2">
-
         {/**SideBar Navigation */}
         <section className="lg:w-[15%] xl:w-[20%] h-full hidden lg:block">
-         <Sidebar/>
+          <Sidebar />
         </section>
 
-        
         {/**Home view */}
         <section className="lg:w-[92%] w-full h-screen">
-          <div className="h-20 m-4 px-10 flex justify-between items-center">
-            <h1 className="font-semibold text-2xl">Greetings</h1>
+          <div className="h-20 m-4 sm:px-10 px-4 flex f justify-between items-center">
+            <div className="flex justify-center items-center gap-3">
+              <button
+                className="text-3xl lg:hidden block"
+                onClick={() => setToogle(!toogle)}
+              >
+                <IoMenu />
+              </button>
+              <h1 className="font-semibold text-2xl">Greetings</h1>
+            </div>
+
             <button className="flex justify-center gap-2 items-center font-semibold px-2 py-2 text-md">
-              <h2 className="">Add Parent/G9</h2>
+              <h2 className="hidden sm:block">Add Parent/G9</h2>
               <RiUserAddLine className="text-xl " />
             </button>
           </div>
@@ -46,15 +72,15 @@ const Dashboard = () => {
                   </div>
                   <div className="w-full flex justify-around items-center">
                     <div className="flex flex-col justify-around items-center">
-                      <h1 className="font-bold text-5xl">327</h1>
+                      <h1 className="font-bold xl:text-5xl text-3xl">327</h1>
                       <p className="text-wrap text-sm">New students</p>
                     </div>
                     <div className="flex flex-col justify-around items-center">
-                      <h1 className="font-bold text-5xl">200</h1>
+                      <h1 className="font-bold xl:text-5xl text-3xl">200</h1>
                       <p className="text-wrap text-sm">Checked in</p>
                     </div>
                     <div className="flex flex-col justify-around items-center">
-                      <h1 className="font-bold text-5xl">127</h1>
+                      <h1 className="font-bold xl:text-5xl text-3xl">127</h1>
                       <p className="text-wrap text-sm">Not checked in</p>
                     </div>
                   </div>
@@ -99,11 +125,15 @@ const Dashboard = () => {
                     className="w-full flex flex-col items-center justify-start"
                     key={event.id}
                   >
-                    <div className="py-3 border-b-2 w-full text-center">{event.day}</div>
+                    <div className="py-3 border-b-2 w-full text-center">
+                      {event.day}
+                    </div>
                     {event.events.map((event: EventType) => {
-                      return <div className="w-full flex justify-center items-start gap-2">
-                      <Events event={event}/>
-                      </div>;
+                      return (
+                        <div className="w-full flex justify-center items-start gap-2">
+                          <Events event={event} />
+                        </div>
+                      );
                     })}
                   </div>
                 );
